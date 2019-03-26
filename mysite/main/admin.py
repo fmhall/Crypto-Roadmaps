@@ -8,7 +8,8 @@ from django.db import models
 class ProjectAdmin(admin.ModelAdmin):
     fields = ["project_name",
               "project_published",
-              "project_description"]
+              "project_description",
+              "milestones"]
 
     formfield_overrides = {
         models.TextField: {'widget': TinyMCE()},
