@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project
+from .models import Project, Event
 from tinymce.widgets import TinyMCE
 from django.db import models
 # Register your models here.
@@ -16,4 +16,10 @@ class ProjectAdmin(admin.ModelAdmin):
     }
 
 
+class EventAdmin(admin.ModelAdmin):
+    fields = ["event_quarter",
+              "event_project"]
+
+
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(Event, EventAdmin)
